@@ -70,6 +70,18 @@ void insertAtLast(int data){
     }
 }
 
+public void atSpecific(int data ,int position){
+    Node newNode=new Node(data);
+    Node temp=head;
+    for(int i=0;i<position-1;i++){
+        temp=temp.next;
+    }
+    newNode.next=temp.next;
+    newNode.prev=temp;
+    temp.next.prev=newNode;
+    temp.next=newNode;
+    
+}
 
 
 void display(){
@@ -90,6 +102,7 @@ public static void main(String[] args) {
     circular.insertAtbeginning(2);
     circular.insertAtbeginning(1);
     circular.insertAtLast(6);
+    circular.atSpecific(11, 2);
    
     circular.display();
    
